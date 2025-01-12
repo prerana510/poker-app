@@ -1,0 +1,53 @@
+
+<div>
+    <!-- Main Content -->
+    <div class="container d-flex" style="height: 100vh;">
+      <!-- Image Section -->
+      <div class="image-container">
+        <img src="/asets/pace.png" alt="PACE" />
+      </div>
+  
+      <!-- Login Section -->
+      <div class="register-container d-flex align-items-center justify-content-center">
+        <div>
+          <h2><b>UST</b> PACE</h2>
+          <p class="bold-small-text">Delightful Platform Engineering: Empowering a 35 Million+ Strong Product Building Community 🚀</p>
+          <form (ngSubmit)="submitForm()">
+            <div class="form-group">
+              <label for="username">Username:</label>
+              <input type="text" class="form-control" id="username" [(ngModel)]="username" name="username" required>
+            </div>
+          
+            <div class="form-group">
+              <label for="firstname">First Name:</label>
+              <input type="text" class="form-control" id="firstname" [(ngModel)]="firstname" name="firstname" required>
+            </div>
+          
+            <div class="form-group">
+              <label for="lastname">Last Name:</label>
+              <input type="text" class="form-control" id="lastname" [(ngModel)]="lastname" name="lastname" required>
+            </div>
+          
+            <div class="form-group">
+              <label for="emailId">Email ID:</label>
+              <input type="email" class="form-control" id="emailId" [(ngModel)]="emailId" name="emailId" required>
+            </div>
+          
+            <div class="form-group">
+              <label for="password">Password:</label>
+              <input type="password" class="form-control" id="password" [(ngModel)]="password" name="password" required>
+            </div>
+          
+            <div *ngIf="errorMessage" class="error-message">
+              {{ errorMessage }}
+            </div>
+          
+            <button type="submit" class="btn btn-primary mt-3">Register</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+

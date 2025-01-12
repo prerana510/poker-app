@@ -1,0 +1,126 @@
+
+/* Ensure body takes up the entire height of the screen */
+* {
+    margin: 0;
+    padding: 0;
+   
+  }
+
+  /* Main container with flex to stretch the content */
+  .container {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    padding: 0;
+  }
+  
+  /* Image container filling up 3/4th of the page */
+  .image-container {
+    flex: 3;
+    overflow: hidden;
+  }
+  
+  
+  .image-container img {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover; /* Ensures the image fully covers the container */
+  }
+  
+  /* Login section occupies the 1/4th part */
+  .register-container {
+    flex: 1;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 50px;
+    padding-right: 0px;
+    box-shadow: -4px 0px 6px rgba(0, 0, 0, 0.1);
+    /* height: 100%; Ensure it takes up the full height */
+  }
+  
+  .register-container {
+    flex: 1; /* Takes 25% of the width */
+    display: flex;
+    align-items: center; /* Centers the content vertically */
+    justify-content: center; /* Centers the content horizontally */
+    background-color: white;
+    box-shadow: -4px 0px 6px rgba(0, 0, 0, 0.1); /* Adds a subtle border to the left of the login box */
+  }
+  
+  
+  
+  h2 {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  /* Make form-group consistent in spacing */
+  form .form-group {
+    margin-bottom: 15px;
+  }
+  
+  label {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  input[type="email"],
+  input[type="password"] {
+    width: 100%;
+    padding: 3px;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+  }
+  
+  button {
+    width: 100%;
+    padding: 10px;
+    background-color: #008193;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #008193;
+  }
+  
+  .bold-small-text {
+    font-size: 13px;
+    font-weight: bold;
+    line-height: 1.5;
+    text-align: center;
+  }
+  
+  .error-message {
+    color: red;
+    margin-top: 0px;
+    font-size: 8px;
+  }
+  .form-group label {
+    font-size: 12px; /* Reduced font size for the label */
+    font-weight: bold; /* Optional: Add bold for better readability */
+    color: #333; /* Optional: Set label color */
+  }
+  
+  .form-control {
+    border: none; /* Remove the default box border */
+    border-bottom: 2px solid #008193; /* Add a blue underline */
+    outline: none; /* Remove the input focus outline */
+    font-size: 14px; /* Adjust input font size as needed */
+    padding: 5px 0; /* Optional: Adjust spacing */
+    width: 100%; /* Optional: Adjust input field width */
+  }
+  
+  .form-control:focus {
+    border-bottom: 2px solid #008193; /* Change underline color on focus */
+    box-shadow: none; /* Remove shadow effect on focus */
+  }
+  
+  
