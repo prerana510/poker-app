@@ -1,9 +1,16 @@
 {
-    "/api": {
-      "target": "http://localhost:8082",
+    "/api/auth/roles": {
+      "target": "http://localhost:8082", 
       "secure": false,
-      "changeOrigin": true,
-      "logLevel": "debug"
+      "logLevel": "debug",
+      "changeOrigin": true
+    },
+    "/api/keycloak": {
+      "target": "http://localhost:8082", 
+      "secure": false,
+      "logLevel": "debug",
+      "changeOrigin": true
     }
+
   }
   
