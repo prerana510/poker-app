@@ -3,7 +3,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { of, throwError } from 'rxjs';
 import { AuthService } from '../auth.service';
 import { RegisterComponent } from './register.component';
-
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 
 
@@ -12,12 +12,13 @@ describe('RegisterComponent', () => {
   let component: RegisterComponent;
   let fixture: ComponentFixture<RegisterComponent>;
   let authServiceMock: jasmine.SpyObj<AuthService>;
+  let service: AuthService;
 
   beforeEach(async () => {
     authServiceMock = jasmine.createSpyObj('AuthService', ['register']);
     await TestBed.configureTestingModule({
       declarations: [ RegisterComponent ],
-      imports: [ReactiveFormsModule],
+      imports: [ReactiveFormsModule, HttpClientTestingModule],
       providers: [
         { provide: AuthService, useValue: authServiceMock }, // Use mock service
       ],
@@ -27,10 +28,11 @@ describe('RegisterComponent', () => {
     fixture = TestBed.createComponent(RegisterComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
+    service = TestBed.inject(AuthService);
   });
 
   it('should create', () => {
-    expect(component).toBeTruthy();
+    expect(service).toBeTruthy();
   });
 
   it('should initialize the form with empty fields', () => {

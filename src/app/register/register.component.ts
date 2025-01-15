@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { AuthService } from '../auth.service';
 
 @Component({
@@ -69,7 +70,7 @@ export class RegisterComponent implements OnInit {
   successMessage: string = ''; // Declare successMessage
   errorMessage: string = ''; // Declare errorMessage (optional)
 
-  constructor(private fb: FormBuilder, private authService: AuthService) {}
+  constructor(private fb: FormBuilder, private authService: AuthService,private router: Router) {}
 
   ngOnInit(): void {
     this.registerForm = this.fb.group({
@@ -88,6 +89,7 @@ export class RegisterComponent implements OnInit {
           this.successMessage = 'User registered successfully!';
           this.errorMessage = ''; // Clear any previous error message
           console.log(response);
+          this.router.navigate(['/login']);
         },
         error: (err) => {
           this.errorMessage = 'Registration failed. Please try again.';

@@ -1,4 +1,4 @@
-<div>
+<div class="full">
     <div class="container d-flex" style="height: 100vh;">
         <div class="image-container">
             <img src="/assets/pace.png" alt="PACE" />
@@ -22,6 +22,10 @@
                     </div>
                     <button type="submit" class="btn btn-primary mt-3" [disabled]="loginForm.invalid">Login</button>
                   </form>
+                  <p class="already-have-account">
+                    Don't have an account? 
+                    <a [routerLink]="['/register']">Register</a>
+                  </p>
                   
             </div>
         </div>

@@ -53,6 +53,7 @@ export class LoginComponent {
   email: string = '';
   password: string = '';
   errorMessage: string = '';
+  successMessage: string = '';
 
   constructor(private authService: AuthService, private router: Router) {}
 
@@ -67,6 +68,7 @@ export class LoginComponent {
         // Handle successful login
         console.log('Login successful', response);
           // Redirect to another page after successful login
+          this.successMessage = 'User logged-in  successfully';
       },
       (error) => {
         // Handle error during login

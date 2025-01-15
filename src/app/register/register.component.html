@@ -1,4 +1,3 @@
-
 <div>
     <!-- Main Content -->
     <div class="container d-flex" style="height: 100vh;">
@@ -7,44 +6,45 @@
         <img src="/assets/pace.png" alt="PACE" />
       </div>
   
-      <!-- Login Section -->
+      <!-- Registration Section -->
       <div class="register-container d-flex align-items-center justify-content-center">
         <div>
           <h2><b>UST</b> PACE</h2>
           <p class="bold-small-text">Delightful Platform Engineering: Empowering a 35 Million+ Strong Product Building Community 🚀</p>
           <div class="register-container">
             <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
-              <div>
+              <div class="form-group">
                 <label for="userName">Username:</label>
                 <input id="userName" formControlName="userName" type="text" />
               </div>
-              <div>
+              <div class="form-group">
                 <label for="password">Password:</label>
                 <input id="password" formControlName="password" type="password" />
               </div>
-              <div>
+              <div class="form-group">
                 <label for="emailId">Email:</label>
                 <input id="emailId" formControlName="emailId" type="email" />
               </div>
-              <div>
+              <div class="form-group">
                 <label for="firstName">First Name:</label>
                 <input id="firstName" formControlName="firstname" type="text" />
               </div>
-              <div>
+              <div class="form-group">
                 <label for="lastName">Last Name:</label>
                 <input id="lastName" formControlName="lastName" type="text" />
               </div>
               <button type="submit" [disabled]="registerForm.invalid">Register</button>
             </form>
-          
+  
             <p *ngIf="successMessage" class="success">{{ successMessage }}</p>
             <p *ngIf="errorMessage" class="error">{{ errorMessage }}</p>
+            <p class="already-have-account">
+                Already have an account? 
+                <a [routerLink]="['/login']">Login</a>
+              </p>
           </div>
-          
         </div>
       </div>
     </div>
   </div>
   
-  
-
